@@ -7,10 +7,11 @@ use Yii;
 /**
  * This is the model class for table "post".
  *
+ * @property string $name
+ * @property string $classa
+ * @property string $classb
+ * @property integer $count
  * @property integer $id
- * @property string $type_product
- * @property string $name_product
- * @property string $quantity
  */
 class Post extends \yii\db\ActiveRecord
 {
@@ -28,9 +29,10 @@ class Post extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['type_product', 'name_product', 'quantity'], 'required'],
-            [['type_product', 'name_product'], 'string'],
-            [['quantity'], 'number'],
+            [['name', 'classa', 'classb', 'count', 'id'], 'required'],
+            [['name', 'classa', 'classb'], 'string'],
+            [['count', 'id'], 'integer'],
+            [['id'], 'unique'],
         ];
     }
 
@@ -40,10 +42,11 @@ class Post extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
+            'name' => 'Название',
+            'classa' => 'Классы А',
+            'classb' => 'Классы Б',
+            'count' => 'Количество',
             'id' => 'ID',
-            'type_product' => 'Тип товара',
-            'name_product' => 'Наименование товара',
-            'quantity' => 'Количество',
         ];
     }
 }

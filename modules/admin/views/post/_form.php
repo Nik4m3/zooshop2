@@ -12,14 +12,30 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'type_product')->textarea(['rows' => 6]) ?>
+    <?= $form->field($model, 'name')->textarea(['rows' => 6]) ?>
 
-    <?= $form->field($model, 'name_product')->textarea(['rows' => 6]) ?>
+    <?= $form->field($model, 'classa')->radioList([
+        'Животные' => 'Животные',
+        'Корма' => 'Корма',
+        'Сопутствующие товары' => 'Сопутствующие товары'
+    ]) ?>
 
-    <?= $form->field($model, 'quantity')->textInput() ?>
+    <?= $form->field($model, 'classb')->checkboxList([
+        'Грызуны' => 'Грызуны',
+        'Земноводные' => 'Земноводные',
+        'Рептилии' => 'Рептилии',
+        'Рыбы' => 'Рыбы',
+        'Кошки' => 'Кошки',
+        'Собаки' => 'Собаки',
+    ]) ?>
+
+
+    <?= $form->field($model, 'count')->textInput() ?>
+
+    <?= $form->field($model, 'id')->textInput() ?>
 
     <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        <?= Html::submitButton($model->isNewRecord ? 'Создать' : 'Обновить', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

@@ -10,8 +10,7 @@ class PostController extends Controller
     public function actionIndex()
     {
         $model = Post::find()->all();
-        return $this->render('index',['model'=>$model]);
+        return $this->render('index', ['model' => $model]);
 
     }
-
 }

@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\PostSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Список товаров';
+$this->title = 'Данные';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="post-index">
@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Ввести данные', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Сделать запись', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
@@ -24,10 +24,11 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
+            'name:ntext',
+            'classa:ntext',
+            'classb:ntext',
+            'count',
             'id',
-            'type_product:ntext',
-            'name_product:ntext',
-            'quantity',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

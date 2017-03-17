@@ -18,9 +18,8 @@ class PostSearch extends Post
     public function rules()
     {
         return [
-            [['id'], 'integer'],
-            [['type_product', 'name_product'], 'safe'],
-            [['quantity'], 'number'],
+            [['name', 'classa', 'classb'], 'safe'],
+            [['count', 'id'], 'integer'],
         ];
     }
 
@@ -60,12 +59,13 @@ class PostSearch extends Post
 
         // grid filtering conditions
         $query->andFilterWhere([
+            'count' => $this->count,
             'id' => $this->id,
-            'quantity' => $this->quantity,
         ]);
 
-        $query->andFilterWhere(['like', 'type_product', $this->type_product])
-            ->andFilterWhere(['like', 'name_product', $this->name_product]);
+        $query->andFilterWhere(['like', 'name', $this->name])
+            ->andFilterWhere(['like', 'classa', $this->classa])
+            ->andFilterWhere(['like', 'classb', $this->classb]);
 
         return $dataProvider;
     }

@@ -1,12 +1,15 @@
 <?php if (count($model)): ?>
 <?php foreach ($model as $item): ?>
 <div class="well">
-    <h3>Тип товара: <?=$item->type_product?></h3>
+    <h3>Наименование товара: <?=$item->name?></h3>
     <p>
-        Наименование товара: <?=$item->name_product?>
+        Подкласс А: <?=$item->classa?>
     </p>
     <p>
-       Количество товара: <?=$item->quantity?>
+        Подкласс Б: <?=$item->classb?>
+    </p>
+    <p>
+       Количество товара: <?=$item->count?>
     </p>
 </div>
 <?php endforeach; ?>

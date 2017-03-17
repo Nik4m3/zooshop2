@@ -2,5 +2,8 @@
 
 return [
     'class' => 'yii\db\Connection',
-    'dsn' => 'sqlite:'.__DIR__ . '/zooshop.db',
+    'dsn' => 'mysql:host=localhost;dbname=lalala',
+    'username' => 'root',
+    'password' => '1',
+    'charset' => 'utf8',
 ];
