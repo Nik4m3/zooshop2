@@ -18,8 +18,8 @@ class PostSearch extends Post
     public function rules()
     {
         return [
-            [['name', 'classa', 'classb'], 'safe'],
-            [['count', 'id'], 'integer'],
+            [['id', 'count'], 'integer'],
+            [['category', 'rodent', 'amphibian', 'reptilie', 'fish', 'cat', 'dog', 'name'], 'safe'],
         ];
     }
 
@@ -59,13 +59,18 @@ class PostSearch extends Post
 
         // grid filtering conditions
         $query->andFilterWhere([
-            'count' => $this->count,
             'id' => $this->id,
+            'count' => $this->count,
         ]);
 
-        $query->andFilterWhere(['like', 'name', $this->name])
-            ->andFilterWhere(['like', 'classa', $this->classa])
-            ->andFilterWhere(['like', 'classb', $this->classb]);
+        $query->andFilterWhere(['like', 'category', $this->category])
+            ->andFilterWhere(['like', 'rodent', $this->rodent])
+            ->andFilterWhere(['like', 'amphibian', $this->amphibian])
+            ->andFilterWhere(['like', 'reptilie', $this->reptilie])
+            ->andFilterWhere(['like', 'fish', $this->fish])
+            ->andFilterWhere(['like', 'cat', $this->cat])
+            ->andFilterWhere(['like', 'dog', $this->dog])
+            ->andFilterWhere(['like', 'name', $this->name]);
 
         return $dataProvider;
     }

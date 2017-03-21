@@ -15,19 +15,30 @@ use yii\widgets\ActiveForm;
         'method' => 'get',
     ]); ?>
 
+    <?= $form->field($model, 'id') ?>
+
     <?= $form->field($model, 'name') ?>
 
-    <?= $form->field($model, 'classa') ?>
+    <?= $form->field($model, 'category') ?>
 
-    <?= $form->field($model, 'classb') ?>
+    <?= $form->field($model, 'rodent') ?>
+
+    <?= $form->field($model, 'amphibian') ?>
+
+    <?= $form->field($model, 'reptilie') ?>
+
+    <?= $form->field($model, 'fish') ?>
+
+    <?= $form->field($model, 'cat') ?>
+
+    <?= $form->field($model, 'dog') ?>
 
     <?= $form->field($model, 'count') ?>
 
-    <?= $form->field($model, 'id') ?>
 
     <div class="form-group">
-        <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>
-        <?= Html::resetButton('Reset', ['class' => 'btn btn-default']) ?>
+        <?= Html::submitButton('Поиск', ['class' => 'btn btn-primary']) ?>
+        <?= Html::resetButton('Сброс', ['class' => 'btn btn-default']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

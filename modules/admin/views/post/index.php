@@ -16,21 +16,136 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Сделать запись', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Внести данные', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
+
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'name:ntext',
-            'classa:ntext',
-            'classb:ntext',
-            'count',
             'id',
+            'name:ntext',
+            'category:ntext',
+            [
+                'attribute' => 'rodent',
+                'format' => 'raw',
+                'filter' =>[
+                    0 => 'Нет',
+                    1 => 'Да',
+                ],
+                'value' => function ($model, $key, $index, $column) {
+                    $active = $model->{$column->attribute} == 1;
+                    return \yii\helpers\Html::tag(
+                        'span',
+                        $active ? 'Да' : 'Нет',
+                        [
+                            'class' => 'label label-' . ($active ? 'success' : 'danger'),
+                        ]
+                    );
+                },
+                ],
 
+            [
+                'attribute' => 'amphibian',
+                'format' => 'raw',
+                'filter' =>[
+                    0 => 'Нет',
+                    1 => 'Да',
+                ],
+                'value' => function ($model, $key, $index, $column) {
+                    $active = $model->{$column->attribute} == 1;
+                    return \yii\helpers\Html::tag(
+                        'span',
+                        $active ? 'Да' : 'Нет',
+                        [
+                            'class' => 'label label-' . ($active ? 'success' : 'danger'),
+                        ]
+                    );
+                },
+            ],
+
+            [
+                'attribute' => 'reptilie',
+                'format' => 'raw',
+                'filter' =>[
+                    0 => 'Нет',
+                    1 => 'Да',
+                ],
+                'value' => function ($model, $key, $index, $column) {
+                    $active = $model->{$column->attribute} == 1;
+                    return \yii\helpers\Html::tag(
+                        'span',
+                        $active ? 'Да' : 'Нет',
+                        [
+                            'class' => 'label label-' . ($active ? 'success' : 'danger'),
+                        ]
+                    );
+                },
+            ],
+
+            [
+                'attribute' => 'fish',
+                'format' => 'raw',
+                'filter' =>[
+                    0 => 'Нет',
+                    1 => 'Да',
+                ],
+                'value' => function ($model, $key, $index, $column) {
+                    $active = $model->{$column->attribute} == 1;
+                    return \yii\helpers\Html::tag(
+                        'span',
+                        $active ? 'Да' : 'Нет',
+                        [
+                            'class' => 'label label-' . ($active ? 'success' : 'danger'),
+                        ]
+                    );
+                },
+            ],
+
+            [
+                'attribute' => 'cat',
+                'format' => 'raw',
+                'filter' =>[
+                    0 => 'Нет',
+                    1 => 'Да',
+                ],
+                'value' => function ($model, $key, $index, $column) {
+                    $active = $model->{$column->attribute} == 1;
+                    return \yii\helpers\Html::tag(
+                        'span',
+                        $active ? 'Да' : 'Нет',
+                        [
+                            'class' => 'label label-' . ($active ? 'success' : 'danger'),
+                        ]
+                    );
+                },
+            ],
+
+            [
+                'attribute' => 'dog',
+                'format' => 'raw',
+                'filter' =>[
+                    0 => 'Нет',
+                    1 => 'Да',
+                ],
+                'value' => function ($model, $key, $index, $column) {
+                    $active = $model->{$column->attribute} == 1;
+                    return \yii\helpers\Html::tag(
+                        'span',
+                        $active ? 'Да' : 'Нет',
+                        [
+                            'class' => 'label label-' . ($active ? 'success' : 'danger'),
+                        ]
+                    );
+                },
+            ],
+            'count',
             ['class' => 'yii\grid\ActionColumn'],
+
         ],
+
     ]); ?>
+
 </div>

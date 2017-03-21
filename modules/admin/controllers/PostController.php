@@ -65,7 +65,6 @@ class PostController extends Controller
     {
         $model = new Post();
 
-
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
@@ -93,7 +92,6 @@ class PostController extends Controller
             ]);
         }
     }
-
 
     /**
      * Deletes an existing Post model.
@@ -123,7 +121,4 @@ class PostController extends Controller
             throw new NotFoundHttpException('The requested page does not exist.');
         }
     }
-
-
-
 }

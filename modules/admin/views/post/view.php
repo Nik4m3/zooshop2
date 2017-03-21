@@ -15,11 +15,11 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('обновить', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('удалить', ['delete', 'id' => $model->id], [
+        <?= Html::a('Обновить', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Удалить', ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
             'data' => [
-                'confirm' => 'Уверены что хотите удалить ?',
+                'confirm' => 'Are you sure you want to delete this item?',
                 'method' => 'post',
             ],
         ]) ?>
@@ -28,11 +28,17 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'name:ntext',
-            'classa:ntext',
-            'classb:ntext',
-            'count',
             'id',
+            'name:ntext',
+            'category:ntext',
+            'rodent:ntext',
+            'amphibian:ntext',
+            'reptilie:ntext',
+            'fish:ntext',
+            'cat:ntext',
+            'dog:ntext',
+            'count',
+
         ],
     ]) ?>
 

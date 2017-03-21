@@ -14,25 +14,27 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'name')->textarea(['rows' => 6]) ?>
 
-    <?= $form->field($model, 'classa')->radioList([
+    <?= $form->field($model, 'category')->radioList([
         'Животные' => 'Животные',
         'Корма' => 'Корма',
         'Сопутствующие товары' => 'Сопутствующие товары'
     ]) ?>
 
-    <?= $form->field($model, 'classb')->checkboxList([
-        'Грызуны' => 'Грызуны',
-        'Земноводные' => 'Земноводные',
-        'Рептилии' => 'Рептилии',
-        'Рыбы' => 'Рыбы',
-        'Кошки' => 'Кошки',
-        'Собаки' => 'Собаки',
-    ]) ?>
+    <?= $form->field($model, 'rodent')->checkbox(['label' => 'Грызуны']) ?>
 
+    <?= $form->field($model, 'amphibian')->checkbox(['label' => 'Земноводные']) ?>
+
+    <?= $form->field($model, 'reptilie')->checkbox(['label' => 'Рептилии']) ?>
+
+    <?= $form->field($model, 'fish')->checkbox(['label' => 'Рыбы']) ?>
+
+    <?= $form->field($model, 'cat')->checkbox(['label' => 'Кошки']) ?>
+
+    <?= $form->field($model, 'dog')->checkbox(['label' => 'Собаки']) ?>
 
     <?= $form->field($model, 'count')->textInput() ?>
 
-    <?= $form->field($model, 'id')->textInput() ?>
+
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Создать' : 'Обновить', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

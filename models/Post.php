@@ -7,11 +7,16 @@ use Yii;
 /**
  * This is the model class for table "post".
  *
- * @property string $name
- * @property string $classa
- * @property string $classb
- * @property integer $count
  * @property integer $id
+ * @property string $category
+ * @property string $rodent
+ * @property string $amphibian
+ * @property string $reptilie
+ * @property string $fish
+ * @property string $cat
+ * @property string $dog
+ * @property integer $count
+ * @property string $name
  */
 class Post extends \yii\db\ActiveRecord
 {
@@ -29,10 +34,9 @@ class Post extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'classa', 'classb', 'count', 'id'], 'required'],
-            [['name', 'classa', 'classb'], 'string'],
-            [['count', 'id'], 'integer'],
-            [['id'], 'unique'],
+            [['category', 'count', 'name'], 'required'],
+            [['category', 'rodent', 'amphibian', 'reptilie', 'fish', 'cat', 'dog', 'name'], 'string'],
+            [['count'], 'integer'],
         ];
     }
 
@@ -42,11 +46,16 @@ class Post extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'name' => 'Название',
-            'classa' => 'Классы А',
-            'classb' => 'Классы Б',
-            'count' => 'Количество',
             'id' => 'ID',
+            'category' => 'Категория',
+            'rodent' => 'Грызуны',
+            'amphibian' => 'Земноводные',
+            'reptilie' => 'Рептилии',
+            'fish' => 'Рыбы',
+            'cat' => 'Кошки',
+            'dog' => 'Собаки',
+            'count' => 'Количество',
+            'name' => 'Наименование товара',
         ];
     }
 }
